@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+    /* General Styling */
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f7f7;
+        color: #333;
+    }
+
+
+    /* Navbar Styling */
+    /* Navbar Styling */
+    /* Navbar Styling */
+    nav {
+        background-color: transparent;
+        /* Transparent background for the navbar */
+        position: sticky;
+        top: 0;
+        width: 100%;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        /* Ensure the navbar stays on top of other content */
+    }
+
+    /* Logo Styling */
+    nav .logo img {
+        max-width: 100px;
+        /* Adjust the logo size as needed */
+    }
+
+    /* Navbar Links */
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        /* Center align the links */
+        flex-grow: 1;
+        /* Take up remaining space between logo and contact button */
+    }
+
+    /* Navbar Links Styling */
+    nav ul li a {
+        text-decoration: none;
+        color: black;
+        /* Black text for links */
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Navbar Links Hover Effect */
+    nav ul li a:hover {
+        background-color: #32cd32;
+        /* Parrot Green background on hover */
+        color: white;
+    }
+
+    /* Contact Button Styling */
+    nav ul li:last-child a {
+        background-color: #32cd32;
+        /* Parrot Green background for Contact button */
+        color: white;
+        padding: 12px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    nav ul li:last-child a:hover {
+        background-color: #28a745;
+        /* Slightly darker shade on hover */
+    }
+
+    /* Sticky Navbar with transition */
+    .scrolled {
+        background-color: #0056b3;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Navbar Animation on Scroll */
+    .scrolled {
+        background-color: #0056b3;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+
+
+
+
+    /* Container */
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        text-align: center;
+    }
+
+    /* Services Section */
+    #services {
+        padding: 50px 0;
+    }
+
+    #services h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #0056b3;
+    }
+
+    .services-list {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .service-card {
+        background: #fff;
+        width: 30%;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-card .icon {
+        font-size: 3rem;
+        color: #32cd32;
+        margin-bottom: 10px;
+    }
+
+    .details-btn {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: #32cd32;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .details-btn:hover {
+        background: #218838;
+    }
+
+    /* Service Details */
+    #service-details {
+        padding: 30px 0;
+        display: none;
+    }
+
+    .detail-content {
+        display: none;
+        padding: 20px;
+        background: #fff;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: left;
+    }
+
+
+
+
+
+
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .faq-item {
+        margin-bottom: 15px;
+    }
+
+    .faq-question {
+        background: #32cd32;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-align: left;
+        cursor: pointer;
+        width: 100%;
+        transition: background 0.3s ease;
+    }
+
+    .faq-question:hover {
+        background: #218838;
+    }
+
+    .faq-answer {
+        display: none;
+        padding: 10px 15px;
+        margin-top: 10px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+
+
+
+    /* Footer Styling */
+    footer {
+        background: linear-gradient(135deg, #0076ff, #8a2be2);
+        color: #fff;
+        padding: 40px 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .footer-logo {
+        flex: 1;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .footer-logo img {
+        width: 100px;
+        margin-bottom: 10px;
+    }
+
+    .footer-logo h2 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .footer-logo p {
+        font-size: 1rem;
+        color: #f1f1f1;
+    }
+
+    .footer-section {
+        flex: 1;
+        margin-bottom: 20px;
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .footer-section h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-section li {
+        margin-bottom: 10px;
+    }
+
+    .footer-section a {
+        color: #f1f1f1;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+        color: #00bcd4;
+    }
+
+    .footer-social .social-icons a {
+        margin: 0 12px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.8rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-social .social-icons a:hover {
+        color: #00bcd4;
+    }
+
+    .footer-map iframe {
+        width: 100%;
+        height: 250px;
+        border: 0;
+        margin-top: 10px;
+    }
+
+    /* Footer Bottom */
+    .footer-bottom {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 1rem;
+    }
+
+    .footer-bottom p {
+        color: #f1f1f1;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo,
+        .footer-section {
+            text-align: center;
+            flex: 1 1 100%;
+        }
+
+        .footer-social .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+        }
+
+        .footer-map iframe {
+            height: 220px;
+        }
+    }
+</style>
+
+<body>
+
+
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo"><a href="index.html">
+                <img src="images/logo.d190050ad47a0a0f8b83.webp" alt="Vetri Software Solution Logo" /></a>
+        </div>
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h1>Our IT Services</h1>
+            <p>Explore our comprehensive range of IT solutions tailored for your business success.</p>
+
+            <!-- Service List -->
+            <div class="services-list">
+                <div class="service-card">
+                    <i class="icon">&#128187;</i>
+                    <h2>UI/UX Design </h2>
+                    <p>Build responsive, modern, and scalable websites.</p>
+                    <button class="details-btn" onclick="toggleDetails('web')">Learn More</button>
+                </div>
+                <div class="service-card">
+                    <i class="icon">&#128241;</i>
+                    <h2>Website Development</h2>
+                    <p>Create intuitive and feature-rich mobile applications.</p>
+                    <button class="details-btn" onclick="toggleDetails('mobile')">Learn More</button>
+                </div>
+                <div class="service-card">
+                    <i class="icon">&#128202;</i>
+                    <h2>Digital Marketing</h2>
+                    <p>Leverage data to drive informed decisions.</p>
+                    <button class="details-btn" onclick="toggleDetails('data')">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section id="service-details">
+        <div class="detail-content" id="web">
+            <h2>Web Development</h2>
+            <p>Our web development services include creating responsive, SEO-optimized, and user-friendly websites that
+                help you achieve your business goals.</p>
+            <ul>
+                <li>Custom Web Design</li>
+                <li>E-commerce Platforms</li>
+                <li>Content Management Systems</li>
+            </ul>
+        </div>
+        <div class="detail-content" id="mobile">
+            <h2>Mobile App Development</h2>
+            <p>We specialize in developing mobile apps for both Android and iOS platforms with cutting-edge technologies
+                and intuitive user experiences.</p>
+            <ul>
+                <li>Hybrid and Native Apps</li>
+                <li>App Store Deployment</li>
+                <li>UI/UX Design</li>
+            </ul>
+        </div>
+        <div class="detail-content" id="data">
+            <h2>Data Analytics</h2>
+            <p>Our data analytics services empower businesses to gain valuable insights and make data-driven decisions.
+            </p>
+            <ul>
+                <li>Data Visualization</li>
+                <li>Predictive Analytics</li>
+                <li>Big Data Solutions</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <button class="faq-question">What is the timeline for web development?</button>
+                <div class="faq-answer">The timeline depends on the project scope, typically ranging from 2-8 weeks.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Do you offer post-development support?</button>
+                <div class="faq-answer">Yes, we provide maintenance and support packages tailored to your needs.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Can you integrate third-party APIs?</button>
+                <div class="faq-answer">Absolutely! We specialize in integrating a wide range of third-party APIs.</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll(".faq-question").forEach((faq) => {
+            faq.addEventListener("click", () => {
+                const answer = faq.nextElementSibling;
+                const isVisible = answer.style.display === "block";
+                answer.style.display = isVisible ? "none" : "block";
+            });
+        });
+    </script>
+
+
+
+
+
+    <footer>
+        <div class="footer-container">
+            <!-- Logo and About Section -->
+            <div class="footer-logo">
+                <img src="images/logo.d190050ad47a0a0f8b83.webp">
+                <h2>Vetri Software Solution</h2>
+                <p>Your partner in innovative software solutions.</p>
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="footer-section footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-section footer-contact">
+                <h3>Contact</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                    <li><i class="fas fa-envelope"></i> info@vetri.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Software Avenue, Tech City</li>
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Location Section -->
+            <div class="footer-section footer-map">
+                <h3>Our Location</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=...your-map-embed-link..." loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Vetri Software Solution. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Script for Navbar Animation on Scroll -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>

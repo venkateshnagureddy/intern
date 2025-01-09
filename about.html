@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Vetri Software Solution</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+
+        /* Navbar Styling */
+        /* Navbar Styling */
+        /* Navbar Styling */
+        nav {
+            background-color: transparent;
+            /* Transparent background for the navbar */
+            position: sticky;
+            top: 0;
+            width: 100%;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            /* Ensure the navbar stays on top of other content */
+        }
+
+        /* Logo Styling */
+        nav .logo img {
+            max-width: 100px;
+            /* Adjust the logo size as needed */
+        }
+
+        /* Navbar Links */
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            /* Center align the links */
+            flex-grow: 1;
+            /* Take up remaining space between logo and contact button */
+        }
+
+        /* Navbar Links Styling */
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            /* Black text for links */
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Navbar Links Hover Effect */
+        nav ul li a:hover {
+            background-color: #32cd32;
+            /* Parrot Green background on hover */
+            color: white;
+        }
+
+        /* Contact Button Styling */
+        nav ul li:last-child a {
+            background-color: #32cd32;
+            /* Parrot Green background for Contact button */
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li:last-child a:hover {
+            background-color: #28a745;
+            /* Slightly darker shade on hover */
+        }
+
+        /* Sticky Navbar with transition */
+        .scrolled {
+            background-color: #0056b3;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navbar Animation on Scroll */
+        .scrolled {
+            background-color: #0056b3;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+
+
+
+
+
+        /* About Us Section */
+        .about-us-section {
+            padding: 40px;
+            background-color: #ffffff;
+            border: 2px solid #0076ff;
+            /* Border color */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            /* Box shadow for depth */
+            border-radius: 10px;
+            /* Rounded corners */
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* About Us Heading */
+        .about-us-section h2 {
+            font-size: 2.5rem;
+            color: #0076ff;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* About Us Paragraph */
+        .about-us-section p {
+            font-size: 1.2rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Button Styles */
+        .show-more-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            color: #fff;
+            background-color: #28a745;
+            /* Parrot Green */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Button Hover Effect */
+        .show-more-btn:hover {
+            background-color: #218838;
+        }
+
+
+
+
+
+
+        /* General Styling */
+        /* body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        h2,
+        h3 {
+            font-weight: bold;
+            color: #0076ff;
+        } */
+
+        /* Leadership Section */
+        .leadership-section {
+            padding: 80px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .leadership-section h3 {
+            font-size: 2.5rem;
+            color: #0076ff;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .leadership-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .leader-card {
+            background-color: #fff;
+            width: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            border: 3px solid #0dec18;
+            /* Added border */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Hover Effect */
+        .leader-card:hover {
+            transform: scale(1.05);
+            /* Slight zoom effect */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            /* Stronger shadow */
+            border-color: #32cd32;
+            /* Change border to brighter green on hover */
+        }
+
+        /* Entrance Animation */
+        @keyframes fadeInScale {
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Apply Entrance Animation */
+        .leader-card {
+            animation: fadeInScale 0.5s ease-out;
+        }
+
+
+        .leader-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .leader-card h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .leader-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
+            display: none;
+        }
+
+        .leader-card:hover p {
+            display: block;
+        }
+
+        .leader-card .leader-name {
+            font-size: 1.2rem;
+            color: #0076ff;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .leader-card .leader-role {
+            font-size: 1rem;
+            color: #555;
+        }
+
+
+
+
+
+
+
+
+
+        /* Core Values Section */
+        .core-values-section {
+            padding: 80px 20px;
+            background-color: #f7f7f7;
+            text-align: center;
+        }
+
+        .core-values-section h3 {
+            font-size: 2.5rem;
+            color: #0076ff;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        /* Core Values Cards Container */
+        .core-values-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        /* Core Value Card */
+        .core-value {
+            background-color: #fff;
+            width: 280px;
+            padding: 20px;
+            border-radius: 40px 0px 40px 0px;
+            border: 3px solid #0dec18;
+            /* Green border */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        }
+
+        /* Hover Animation */
+        .core-value:hover {
+            transform: scale(1.1);
+            /* Slight zoom effect */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            /* Stronger shadow */
+            border-color: #32cd32;
+            /* Change border to a brighter green */
+        }
+
+        /* Glow Effect Animation */
+        @keyframes glowBorder {
+            0% {
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 0 10px rgba(50, 205, 50, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 0 20px rgba(50, 205, 50, 1);
+            }
+
+            100% {
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 0 10px rgba(50, 205, 50, 0.5);
+            }
+        }
+
+        /* Apply Glow Animation */
+        .core-value:hover {
+            animation: glowBorder 1.5s infinite;
+            /* Infinite glow effect on hover */
+        }
+
+        /* Entrance Animation */
+        @keyframes slideIn {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Add Entrance Animation */
+        .core-value {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        /* Icon Styling */
+        .core-value h4 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .core-value p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        /* Additional Color & Icon Styling */
+        .core-value i {
+            font-size: 3rem;
+            color: #0076ff;
+            margin-bottom: 20px;
+        }
+
+
+
+
+
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 80px 20px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .timeline-section h3 {
+            font-size: 2.5rem;
+            color: #0076ff;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        /* Timeline Container */
+        .timeline-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .timeline-container ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        .timeline-container li {
+            position: relative;
+            padding: 20px 20px 20px 50px;
+            margin: 20px 0;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Timeline Line */
+        .timeline-container li::before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background-color: #0076ff;
+        }
+
+        /* Milestone Date */
+        .milestone-date {
+            position: absolute;
+            left: -40px;
+            top: 20px;
+            font-size: 1.2rem;
+            color: #0076ff;
+            font-weight: bold;
+        }
+
+        /* Milestone Description */
+        .milestone-description {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.5;
+            margin-left: 20px;
+        }
+
+        /* Hover Effect for Timeline Items */
+        .timeline-container li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+
+
+
+        /* Footer Styling */
+        footer {
+            background: linear-gradient(135deg, #0076ff, #8a2be2);
+            color: #fff;
+            padding: 40px 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-logo {
+            flex: 1;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .footer-logo img {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
+            font-size: 1rem;
+            color: #f1f1f1;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin-bottom: 20px;
+            padding: 0 15px;
+            text-align: center;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #f1f1f1;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #00bcd4;
+        }
+
+        .footer-social .social-icons a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social .social-icons a:hover {
+            color: #00bcd4;
+        }
+
+        .footer-map iframe {
+            width: 100%;
+            height: 250px;
+            border: 0;
+            margin-top: 10px;
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1rem;
+        }
+
+        .footer-bottom p {
+            color: #f1f1f1;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-logo,
+            .footer-section {
+                text-align: center;
+                flex: 1 1 100%;
+            }
+
+            .footer-social .social-icons a {
+                font-size: 1.5rem;
+                margin: 0 10px;
+            }
+
+            .footer-map iframe {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo"><a href="index.html">
+                <img src="images/logo.d190050ad47a0a0f8b83.webp" alt="Vetri Software Solution Logo" /></a>
+        </div>
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- About Us Section -->
+    <section class="about-us-section">
+        <h2>About Vetri Software Solution</h2>
+        <p>Vetri Software Solution is a leading software development company specializing in innovative solutions that
+            help businesses grow. With over a decade of experience in the industry, we have successfully delivered a
+            wide range of projects from custom software to mobile applications. Our mission is to provide high-quality,
+            scalable software that meets the unique needs of our clients.</p>
+
+        <button class="show-more-btn" onclick="showMoreImages()">Show More Images</button>
+
+        <!-- More images section, hidden by default -->
+        <div class="more-images" id="moreImages" style="display: none;">
+            <br>
+            <img src="images/image1.jpg" alt="Image 1" class="about-us-image">
+            <img src="images/image2.jpg" alt="Image 2" class="about-us-image">
+            <img src="images/image3.jpg" alt="Image 3" class="about-us-image">
+        </div>
+    </section>
+
+    <script>
+        // Function to toggle visibility of additional images
+        function showMoreImages() {
+            const moreImagesSection = document.getElementById('moreImages');
+            if (moreImagesSection.style.display === 'none') {
+                moreImagesSection.style.display = 'block'; // Show more images
+            } else {
+                moreImagesSection.style.display = 'none'; // Hide images again
+            }
+        }
+    </script>
+
+
+    <!-- Leadership Section -->
+    <section class="leadership-section">
+        <h3>Meet Our Leadership Team</h3>
+        <div class="leadership-container">
+
+            <!-- Leadership Member 1 -->
+            <div class="leader-card">
+                <img src="images/man1.jpg" alt="Leader 1">
+                <div class="leader-name">John Doe</div>
+                <div class="leader-role">CEO</div>
+                <p>John is the visionary behind Vetri Software Solution, leading the company with over 15 years of
+                    experience in the tech industry.</p>
+            </div>
+
+            <!-- Leadership Member 2 -->
+            <div class="leader-card">
+                <img src="images/man2.jpg" alt="Leader 2">
+                <div class="leader-name">Jane Smith</div>
+                <div class="leader-role">CTO</div>
+                <p>Jane drives the technical vision at Vetri Software Solution, focusing on innovative solutions and
+                    advanced technology integration.</p>
+            </div>
+
+            <!-- Leadership Member 3 -->
+            <div class="leader-card">
+                <img src="images/man3.jpg" alt="Leader 3">
+                <div class="leader-name">Mike Johnson</div>
+                <div class="leader-role">COO</div>
+                <p>Mike oversees operations, ensuring that all projects are executed smoothly and effectively, with a
+                    focus on client satisfaction.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Core Values Section -->
+    <section class="core-values-section">
+        <h3>Our Core Values</h3>
+        <div class="core-values-container">
+            <!-- Innovation Card -->
+            <div class="core-value">
+                <i class="fas fa-lightbulb"></i>
+                <h4>Innovation</h4>
+                <p>We embrace creativity and encourage innovative ideas to solve complex problems and improve our
+                    services.</p>
+            </div>
+
+            <!-- Integrity Card -->
+            <div class="core-value">
+                <i class="fas fa-gavel"></i>
+                <h4>Integrity</h4>
+                <p>We uphold the highest standards of honesty and transparency in every project we take on.</p>
+            </div>
+
+            <!-- Excellence Card -->
+            <div class="core-value">
+                <i class="fas fa-trophy"></i>
+                <h4>Excellence</h4>
+                <p>We are committed to delivering high-quality solutions that exceed expectations and add real value.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <h3>Our Journey</h3>
+        <div class="timeline-container">
+            <ul>
+                <!-- Milestone 2010 -->
+                <li>
+                    <span class="milestone-date">2021</span>
+                    <p class="milestone-description">Vetri Software Solution was founded with a vision to revolutionize
+                        the software industry.</p>
+                </li>
+
+                <!-- Milestone 2013 -->
+                <li>
+                    <span class="milestone-date">2022</span>
+                    <p class="milestone-description">Launched our first mobile app, receiving high praise from users and
+                        businesses alike.</p>
+                </li>
+
+                <!-- Milestone 2016 -->
+                <li>
+                    <span class="milestone-date">2023</span>
+                    <p class="milestone-description">Expanded our operations globally, opening offices in North America
+                        and Europe.</p>
+                </li>
+
+                <!-- Milestone 2020 -->
+                <li>
+                    <span class="milestone-date">2024</span>
+                    <p class="milestone-description">Successfully completed over 500+ projects, serving clients across
+                        various industries.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-container">
+            <!-- Logo and About Section -->
+            <div class="footer-logo">
+                <img src="images/logo.d190050ad47a0a0f8b83.webp">
+                <h2>Vetri Software Solution</h2>
+                <p>Your partner in innovative software solutions.</p>
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="footer-section footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-section footer-contact">
+                <h3>Contact</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                    <li><i class="fas fa-envelope"></i> info@vetri.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Software Avenue, Tech City</li>
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-section footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Location Section -->
+            <div class="footer-section footer-map">
+                <h3>Our Location</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=...your-map-embed-link..." loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Vetri Software Solution. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Script for Navbar Animation on Scroll -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
